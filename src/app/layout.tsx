@@ -4,6 +4,7 @@ import { getPageMap } from 'nextra/page-map'
 import 'nextra-theme-docs/style.css'
 import { Metadata } from 'next'
 import Image from 'next/image';
+import './globals.css' 
 
 export const metadata: Metadata  = {
   title: 'Spreadly Docs',

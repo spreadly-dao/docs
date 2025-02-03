@@ -60,3 +60,7 @@ body {
 .dark *::-webkit-scrollbar-thumb:hover {
   background: #505050;
 }
+
+.nextra-navbar-blur, .nextra-search-results {
+  background-color: var(--x-color-nextra-bg) !important; /* Light background */
+}
