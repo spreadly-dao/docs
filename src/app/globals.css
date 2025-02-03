@@ -1,0 +1,62 @@
+:root {
+  --nextra-primary-hue: 196;
+  --nextra-primary-saturation: 100%;
+  --nextra-primary-brightness: 50%;
+}
+
+body {
+  font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+.nextra-nav-container nav, 
+.dark .nextra-nav-container nav {
+  background: transparent;
+}
+
+.nx-text-primary-600 {
+  color: #00C8FF !important;
+}
+
+.dark .nx-text-primary-600 {
+  color: #33D3FF !important;
+}
+
+.nx-bg-primary-100 {
+  background-color: rgba(0, 200, 255, 0.1) !important;
+}
+
+.dark .nx-bg-primary-100 {
+  background-color: rgba(51, 211, 255, 0.1) !important;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #a0a0a0 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: #a0a0a0;
+  border-radius: 10px;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background: #808080;
+}
+
+/* Dark mode */
+.dark *::-webkit-scrollbar-thumb {
+  background: #404040;
+}
+
+.dark *::-webkit-scrollbar-thumb:hover {
+  background: #505050;
+}
