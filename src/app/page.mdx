@@ -1,101 +1,98 @@
 ---
 title: Introduction
-description: Learn about Spreadly's core concepts and functionality
+description: Fundamental concepts and architecture of the Spreadly platform
 ---
 
 # What is Spreadly?
 
-Spreadly is an innovative platform that enables users to create and manage investment DAOs through a standardized, two-phase capital raising process. Spreadly combines the power of decentralized finance with sophisticated treasury management capabilities, allowing both individual and collective management of investment portfolios.
+Spreadly revolutionizes decentralized asset management by combining structured capital formation with flexible DAO governance. Our platform enables creation of investment vehicles that balance decentralized control with professional-grade portfolio management.
 
-## Management Structures
+## 1.1 Management Structures
 
-The platform is designed to accommodate various management styles and investment strategies through three distinct management structures:
+Spreadly empowers organizations with flexible management options through purpose-built contracts that cater to different operational needs:
 
-- **Single Admin Management**: Designed for individual portfolio managers
-- **Multi-Admin Management**: Optimized for collaborative investment teams
-- **Governance-Based Management**: Built for fully decentralized investment communities
+**Single Admin DAO -** A streamlined structure perfect for individual portfolio managers, featuring:
+- Full treasury control through a single wallet address
+- Seamless trade execution with automated fee collection
+- Fair profit sharing between the trading admin and DAO token stakers
+- Emergency disbandment voting, ensuring DAO token stakers can recover equitable shares of the treasury
 
-## Platform Features
+**Multi-Admin DAO -** Designed for collaborative investment teams that need shared control:
+- Equal trading privileges across multiple admin addresses
+- Automated fee distribution to trade executors
+- Equitable profit sharing with DAO token stakers
+- Protected by emergency voting and distribution, just as Single Admin DAOs
 
-Our platform offers a comprehensive suite of features designed to support efficient DAO management:
+**Governance DAO -** A fully decentralized model built for community-driven management:
+- Democratic control through token-based voting
+- Comprehensive proposal system for DAO settings and trades
+- Flexible voting power delegation to any address on Sui
+- Transparent profit distribution to all token stakers
+- Community-controlled emergency procedures for treasury protection
 
-- Standardized two-phase capital raising process
-- Flexible management structures
-- Comprehensive profit-sharing mechanisms
-- Advanced treasury management tools
-- Transparent operation logging
-- Automated fee distribution systems
+## 1.2 Key Protocol Components
 
-## Key Concepts
+### 1.2.1 Capital Formation Process
 
-### Capital Raising Process
+**Phase 1 - SPRD Bonding**  
+- Fixed bonding curve parameters required for a DAO to graduate from the curve
+- Automated LP migration to Cetus for live trading
+- Phase transition safeguards
 
-Our platform implements a unique two-phase capital raising process:
+**Phase 2 - Asset Deposition**  
+- Configurable deposit windows (24-72hrs)  
+- Multi-asset collateralization  
+- Chainlink-based valuation  
+- Proportional token minting  
 
-**1. SPRD Bonding Phase**
+### 1.2.2 Treasury Operations
 
-The initial phase of capital raising utilizes a standardized mechanism:
+**Asset Management Matrix**
 
-- Utilizes a standardized bonding curve mechanism
-- Requires a fixed SPRD amount for participation
-- Automatically creates liquidity pools upon completion
+| Capability          | Admin DAOs | Governance DAOs |
+|---------------------|------------|-----------------|
+| Spot Trading        | Whitelisted Pairs | All Pairs |
+| Derivatives         | Sudo Perps | Sudo Perps |
+| Lending/Borrowing             | SuiLend    | SuiLend    |
+| NFT Trading         | ❌         | TradePort   |
+| External Withdrawals| ❌         | ✅          |
+| Disbandment | ✅         | ✅          |
 
-**2. Asset Deposit Phase (Optional)**
+### 1.2.3 Staking & Governance
 
-The secondary phase allows for diverse asset inclusion:
+**Protocol Governance:** Staked SPRD holders can participate in governance decisions regarding the following
+    - Setting minimum SPRD thresholds for launching new bonding curves
+    - Determining required SPRD fees for proposal creation, trade execution, and proposal comments
+    - Adjusting the treasury/revenue distribution ratio for total revenues
+    - Modifying profit distribution schedules and epoch lengths
+    - Managing whitelisted assets for DeepBook and Cetus trading
 
-- Time-limited deposit window
-- Supports multiple pre-approved assets
-- Oracle-based asset valuation
-- Automated token distribution
+**Economic Benefits:** Staked SPRD holders earn protocol revenue through two distinct channels:
+    * **SPRD Protocol Fees:** SPRD generated from DAO activities across the platform, including: DAO launch fees, proposal creation & commenting fees, trade execution fees.
+    - **DAO Trading Fees:** Revenue from successful trades executed by DAOs, denominated in the traded currency.
 
-### Revenue Distribution
+Both revenue streams are distributed between treasury and revenue pools according to the DAO config. Staked SPRD holders receive their share of the revenue pools through regular epoch-based distributions, proportional to their staked amount.
 
-The platform incorporates multiple revenue streams and distribution mechanisms:
+**DAO Governance**  
+- Treasury disbandment procedures  
+- Proposal lifecycle management:  
+  - Creation thresholds  
+  - Voting windows  
+  - Execution safeguards  
+- Configuration migration paths
 
-**Spreadly DAO Management Fees**
 
-Platform-level revenue management:
+### 1.2.4 Revenue Framework
 
-- Centralized revenue pool collection
-- Staking-based distribution system
-- Epoch-based reward calculations
+**Platform-Level Economics**  
+```mermaid
+graph LR
+  A[DAO Fees] --> B[Revenue Pool]
+  B --> C{Staked SPRD}
+  C --> D[Pro Rata Distribution]
+  D --> E[30-Day Epochs]
+```
 
-**Individual DAO Profits**
-
-DAO-specific profit handling:
-
-- Dedicated staking contracts per DAO
-- Flexible reward periods
-- Performance-based distribution
-- Transparent fee structures
-
-### Governance
-
-The platform implements a two-tiered governance structure:
-
-**Platform-Level (Spreadly DAO)**
-
-Overarching protocol governance:
-
-- Asset whitelisting decisions for trading and deposits
-- Protocol parameter adjustments (SPRD requirements, epoch periods)
-- Revenue distribution configurations
-- Platform-wide policy changes
-
-**DAO-Level Governance**
-
-Specialized governance based on DAO type:
-
-**Single & Multi-Admin DAOs**
-
-- Treasury disbandment voting (requires majority approval)
-- 30-day cooldown period after successful disbandment vote
-- Token burning mechanism for treasury share distribution
-
-**Governance-Based DAOs (Upcoming)**
-
-- Full treasury management decisions
-- Investment strategy implementation
-- Proposal creation and voting
-- Configuration changes
+**DAO-Specific Distribution**  
+- Performance-based rewards, only on profitable trades  
+- Stakers receive a proportional amount of revenue based for each epoch 
