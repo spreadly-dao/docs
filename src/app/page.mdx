@@ -34,10 +34,12 @@ Spreadly empowers organizations with flexible management options through purpose
 
 ### 1.2.1 Capital Formation Process
 
-**Phase 1 - SPRD Bonding**  
-- Fixed bonding curve parameters required for a DAO to graduate from the curve
-- Automated LP migration to Cetus for live trading
-- Phase transition safeguards
+**Phase 1 - SPRD Bonding Curve**
+- Initiates and configures a DAO, collects the launch fee in SPRD tokens, then adds the DAO to the bonding curve
+- Price discovery through active trading on the bonding curve, with all transactions conducted in SPRD
+- Progresses to the asset deposition phase once the DAO reaches the target SPRD threshold on the curve
+- Transitions to the active market trading through automatic liquidity provision on Cetus DEX
+- Establishes a SPRD trading pair for the DAO token, creating essential pricing for the asset deposition phase
 
 **Phase 2 - Asset Deposition**  
 - Configurable deposit windows (24-72hrs)  
@@ -49,14 +51,15 @@ Spreadly empowers organizations with flexible management options through purpose
 
 **Asset Management Matrix**
 
-| Capability          | Admin DAOs | Governance DAOs |
-|---------------------|------------|-----------------|
-| Spot Trading        | Whitelisted Pairs | All Pairs |
-| Derivatives         | Sudo Perps | Sudo Perps |
-| Lending/Borrowing             | SuiLend    | SuiLend    |
-| NFT Trading         | ❌         | TradePort   |
-| External Withdrawals| ❌         | ✅          |
-| Disbandment | ✅         | ✅          |
+| Capability                    | Admin DAOs                    | Governance DAOs                |
+|:-----------------------------|:------------------------------|:------------------------------|
+| Spot Trading                 | Whitelisted Pairs on DeepBook & Cetus            | All Pairs on DeepBook & Cetus                    |
+| Derivatives                  | Sudo Perps                    | Sudo Perps                    |
+| Lending/Borrowing           | SuiLend                       | SuiLend                       |
+| NFT Trading                  | ❌                           | TradePort                     |
+| External Withdrawals         | ❌                           | ✅                           |
+| Disbandment                  | ✅                           | ✅                           |
+
 
 ### 1.2.3 Staking & Governance
 
