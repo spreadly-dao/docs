@@ -1,0 +1,32 @@
+---
+title: Treasury Operations
+description: Learn about Spreadly's Treasury Operations
+index: 4
+---
+
+### Treasury Operations
+
+DAOs created through Spreadly function as autonomous investment vehicles within the Sui ecosystem, interacting directly 
+with DeFi protocols through secure on-chain integrations. Each DAO's treasury can engage with multiple DeFi 
+primitives including spot trading, perpetual futures, lending/borrowing, option-based strategies, and NFT trading, 
+with capabilities determined by the selected management structure.
+
+Admin DAOs follow a permissioned model focused on core DeFi activities, while Governance DAOs can access the full range 
+of treasury operations through community-driven proposals. This tiered access model balances trading flexibility with 
+robust treasury security.
+
+**Asset Management Matrix**
+
+| Capability                     | Admin DAOs                               | Governance DAOs               |
+|:-------------------------------|:-----------------------------------------|:------------------------------|
+| Spot Trading                   | Whitelisted Pairs on DeepBook & Cetus    | All Pairs on DeepBook & Cetus |
+| Perpetuals                     | Sudo Finance                             | Sudo Finance                  |
+| Lending/Borrowing              | Suilend                                  | Suilend                       |
+| Option-Based Strategies        | Typus                                    | Typus                       |
+| NFT Trading                    | ❌                                       | TradePort                     |
+| External Transfers             | ❌                                       | ✅                           |
+| Disbandment & Distribution     | ✅                                       | ✅                           |
+
+Admin DAOs are restricted from NFT trading and external transfers to prevent potential misuse of treasury funds. 
+These operations require token holder consensus through the governance proposal system, ensuring community oversight 
+of higher-risk treasury activities.

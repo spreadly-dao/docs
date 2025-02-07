@@ -29,6 +29,10 @@ ul {
   margin-top: calc(var(--x-spacing)* 3);
 }
 
+.nextra-breadcrumb {
+  display: none !important;
+}
+
 h2 {
   padding-bottom: 15px;
 }

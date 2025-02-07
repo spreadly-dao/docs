@@ -1,153 +1,28 @@
 ---
 title: Introduction
 description: Fundamental concepts and architecture of the Spreadly platform
+index: 1
 ---
 
 # What is Spreadly?
 
-Spreadly revolutionizes decentralized asset management by combining structured capital formation with flexible DAO governance. 
-The protocol enables anyone to create or join investment DAOs that can autonomously trade, lend, and manage digital assets across the Sui ecosystem. 
-Through a unique two-phase capital formation process to form DAOs, Spreadly balances community participation with capital investment by 
-utilizing a bonding curve and multi-asset deposits window. Governance and revenue sharing mechanisms align economic incentives, 
-with each DAO's management structure controlling investment decisions while distributing protocol fees to the Spreadly community.
+Spreadly is a decentralized asset management protocol that enables anyone to create or join investment 
+DAOs on Sui. The platform revolutionizes how decentralized investment vehicles are formed 
+and operated by combining structured capital formation with flexible governance models. Through Spreadly, 
+users can participate in professionally managed investment strategies or create their own DAOs with customized management structures.
 
-## Management Structures
+At its core, Spreadly implements a unique two-phase capital formation process that balances community 
+participation with capital investment. The first phase utilizes a bonding curve mechanism for price discovery 
+and initial token distribution using SPRD tokens, while the second phase opens a multi-asset deposit window 
+for larger investors. This structured approach ensures fair access while maintaining economic alignment between all participants.
 
-Spreadly empowers organizations with flexible management options through purpose-built contracts that cater to different operational needs:
+The protocol supports three distinct management structures - Single Admin, Multi-Admin, and Governance Based - 
+each designed to accommodate different operational needs. Single Admin provides streamlined control for 
+individual portfolio managers, Multi-Admin enables collaborative investment teams to share responsibilities, 
+and Governance Based allows for fully decentralized community management. Each structure maintains robust 
+treasury operations through secure DeFi integrations, while incorporating governance mechanisms that protect token holders.
 
-**Single Admin -** A streamlined structure perfect for individual portfolio managers, featuring:
-- Full treasury control through a single wallet address
-- Seamless trade execution with automated fee collection
-- Fair profit sharing between the trading admin and DAO token stakers
-- Emergency disbandment voting, ensuring DAO token stakers can recover equitable shares of the treasury
-
-**Multi-Admin -** Designed for collaborative investment teams that need shared control:
-- Equal trading privileges across multiple admin addresses
-- Automated fee distribution to trade executors
-- Equitable profit sharing with DAO token stakers
-- Protected by emergency voting and distribution, just as Single Admin DAOs
-
-**Governance Based -** A fully decentralized model built for community-driven management:
-- Democratic control through token-based voting
-- Comprehensive proposal system for DAO settings and trades
-- Flexible voting power delegation to any address on Sui
-- Transparent profit distribution to all token stakers
-- Community-controlled emergency procedures for treasury protection
-
-## Key Protocol Components
-
-### Capital Formation Process
-
-The capital formation process uniquely prioritizes community participation before opening to larger investors. 
-By making DAO tokens initially available through a bonding curve, the protocol enables community members to acquire 
-ownership of the DAO at discovery prices using SPRD. 
-
-The ratio between bonding curve and investor allocations, 
-set during DAO creation, determines how many tokens are available in each phase - for example, a 40/60 ratio would make 
-40% of tokens available through the SPRD bonding curve and 60% during the asset deposit window.
-
-#### Phase 1 - Bonding Curve
-- Initiates and configures a DAO, collects the launch fee in SPRD tokens, then adds the DAO to the bonding curve
-- Price discovery through active trading on the bonding curve, with all transactions conducted in SPRD
-- Progresses to the investor window phase once the DAO reaches the target SPRD threshold on the curve
-- Transitions to the active market trading through automatic liquidity provision on Cetus DEX
-
-#### Phase 2 - Investor Window
-- Accepts whitelisted assets during a fixed window (minimum of 24 hours) configured at DAO creation
-- Converts all deposits to SUI equivalent using real-time Cetus pool pricing mechanism
-- Calculates final token allocation based on relative SUI value contribution
-- Distributes tokens according to the predefined investor allocation ratio and individual contribution
-
-### Treasury Operations
-
-DAOs created through Spreadly function as autonomous investment vehicles within the Sui ecosystem, interacting directly 
-with DeFi protocols through secure on-chain integrations. Each DAO's treasury can engage with multiple DeFi 
-primitives including spot trading, perpetual futures, lending/borrowing, option-based strategies, and NFT trading, 
-with capabilities determined by the selected management structure.
-
-Admin DAOs follow a permissioned model focused on core DeFi activities, while Governance DAOs can access the full range 
-of treasury operations through community-driven proposals. This tiered access model balances trading flexibility with 
-robust treasury security.
-
-**Asset Management Matrix**
-
-| Capability                     | Admin DAOs                               | Governance DAOs               |
-|:-------------------------------|:-----------------------------------------|:------------------------------|
-| Spot Trading                   | Whitelisted Pairs on DeepBook & Cetus    | All Pairs on DeepBook & Cetus |
-| Perpetuals                     | Sudo Finance                             | Sudo Finance                  |
-| Lending/Borrowing              | Suilend                                  | Suilend                       |
-| Option-Based Strategies        | Typus                                    | Typus                       |
-| NFT Trading                    | ❌                                       | TradePort                     |
-| External Transfers             | ❌                                       | ✅                           |
-| Disbandment & Distribution     | ✅                                       | ✅                           |
-
-Admin DAOs are restricted from NFT trading and external transfers to prevent potential misuse of treasury funds. 
-These operations require token holder consensus through the governance proposal system, ensuring community oversight 
-of higher-risk treasury activities.
-
-### Staking & Governance
-
-Spreadly's governance architecture operates across two complementary layers: the Spreadly DAO and Investment DAOs. 
-The Spreadly DAO oversees platform-wide operations and protocol parameters, with staked token holders earning 
-protocol revenues while guiding the platform's development, while Investment DAOs focus on specific trading strategies 
-and treasury management, with their token stakers earning returns from investment activities. Both governance layers 
-feature non-locking staking mechanisms, allowing stakers to adjust their positions freely by staking or unstaking at any time.
-
-To participate in governance and revenue sharing, tokens must be staked before specific timeframes - the end of 
-the profit distribution epoch for revenue sharing, and before a proposal's voting period concludes for governance 
-participation. Token stakers can also delegate their voting power to multiple addresses on Sui, providing flexible 
-participation options while managing their involvement across the ecosystem.
-
-#### Spreadly DAO
-
-SpreadlyDAO functions as the platform's administrative layer, with staked SPRD holders participating 
-in protocol governance and earning revenue from platform activities. Unlike Investment DAOs, 
-SpreadlyDAO does not engage in direct trading but instead manages protocol parameters and earns fees from platform usage.
-
-**Protocol Governance -** Staked SPRD holders can participate in governance decisions regarding the following:
-  - Setting minimum SPRD thresholds for launching new bonding curves
-  - Approving whitelisted assets for the investor window phase of capital formation
-  - Determining required SPRD fees for trade execution and proposal comments
-  - Configuring treasury/revenue distribution ratio for total revenues
-  - Updating profit distribution schedules and epoch lengths
-  - Curating whitelisted assets for DeepBook and Cetus trading
-  - Setting management fee rates charged to DAOs on profitable trades
-  - Configuring governance parameters including proposal support thresholds, minimum participation requirements, 
-  minimum proposal durations, and minimum SPRD stake for proposal creation
-  - Overseeing treasury funds for decentralized operation of Spreadly
-
-
-**Economic Benefits -** Staked SPRD holders earn protocol revenue through two distinct channels:
-    * **SPRD Protocol Fees:** SPRD generated from DAO activities across the platform, including DAO launch fees, proposal commenting 
-    fees, trade execution fees.
-    - **DAO Trading Fees:** Management fees from profitable trades executed by DAOs, denominated in the traded currency.
-
-Both revenue streams are distributed between treasury and revenue pools according to the DAO config. 
-Staked SPRD holders receive their share of the revenue pools through regular epoch-based distributions, 
-proportional to their staked amount.
-
-#### Investment DAOs
-
-Investment DAOs represent individual trading entities on the platform, each with its own governance structure
-and profit distribution mechanism.
-
-**Governance Rights -** Token stakers in Investment DAOs can participate in:
-  - Treasury disbandment voting with 30-day cooldown period, requiring a majority vote of all token holders. 
-  - Revenue allocation decisions between distribution and reinvestment into the treasury
-  - Updating profit distribution schedules and epoch lengths
-  - Configuring governance parameters including proposal support thresholds, minimum participation requirements, 
-  minimum proposal durations, and minimum SPRD stake for proposal creation
-
-**Economic Benefits -** Investment DAO token stakers can earn returns through:
-  - Equitable profit distribution from successful trades
-  - Proportional treasury share upon DAO disbandment
-
-  **Governance-Based Trading** 
-  
-  Governance-Based DAOs require proposals for all trading activities and treasury management. DAO token stakers can vote on proposals that:
-
-  - Spot trade any token pairs on DeepBook and Cetus DEX, accessing all tokens on Sui
-  - Generate leveraged returns through perpetual futures positions on Sudo Finance
-  - Optimize treasury yields by participating in Suilend's lending and borrowing markets
-  - Transfer treasury assets to external wallets for specific use cases
-  - Build NFT positions by acquiring digital collectibles through TradePort's marketplace
+Spreadly's economic model is built around the SPRD token, which serves as both a governance tool and a claim on 
+protocol revenues. SPRD holders can stake their tokens to participate in platform governance and earn returns from protocol activities, 
+including DAO creation fees, trading fees, and management fees from successful trades. This dual-purpose token model creates strong 
+alignment between the protocol's growth and stakeholder returns, while ensuring sustainable development of the platform ecosystem.
