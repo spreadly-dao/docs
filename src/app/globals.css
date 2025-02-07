@@ -122,5 +122,5 @@ body {
 }
 
 .subheading-anchor {
-  display: none;
+  opacity: 0% !important;
 }
