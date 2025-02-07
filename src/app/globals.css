@@ -6,8 +6,9 @@
   --x-color-gray-100: transparent;
   --x-color-nextra-bg: transparent;
   --x-color-gray-200: rgba(0, 0, 0, 0.1);
-  --x-color-neutral-800: rgba(255, 255, 255, 0.2);
+  --x-color-neutral-800: rgba(255, 255, 255, 0.3);
   --x-color-primary-600: #002937;
+  --nextra-navbar-height: 55px;
 
   #headlessui-portal-root div ul {
     background: #FFFFFF;
@@ -17,10 +18,15 @@
 :root[style*="color-scheme: dark"] {
   --x-color-primary-600: #00BBFF; /* Dark mode value */
   --x-color-gray-100: #FFFFFF;
+  --x-color-gray-200: #FFFFFF;
 
   #headlessui-portal-root div ul {
     background: #000000;
   }
+}
+
+ul {
+  margin-top: calc(var(--x-spacing)* 3);
 }
 
 h2 {
@@ -123,4 +129,8 @@ body {
 
 .subheading-anchor {
   opacity: 0% !important;
+}
+
+footer {
+  padding: 1.5rem;
 }
