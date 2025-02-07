@@ -2,10 +2,37 @@
   --nextra-primary-hue: 196;
   --nextra-primary-saturation: 100%;
   --nextra-primary-brightness: 50%;
+  --x-color-neutral-900: transparent;
+  --x-color-gray-100: transparent;
+  --x-color-nextra-bg: transparent;
+  --x-color-gray-200: rgba(0, 0, 0, 0.1);
+  --x-color-neutral-800: rgba(255, 255, 255, 0.2);
+  --x-color-primary-600: #002937;
+
+  #headlessui-portal-root div ul {
+    background: #FFFFFF;
+  }
+}
+
+:root[style*="color-scheme: dark"] {
+  --x-color-primary-600: #00BBFF; /* Dark mode value */
+  --x-color-gray-100: #FFFFFF;
+
+  #headlessui-portal-root div ul {
+    background: #000000;
+  }
+}
+
+h2 {
+  padding-bottom: 15px;
 }
 
 body {
   font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, sans-serif;
+}
+
+a {
+  font-weight: 500;
 }
 
 .nextra-nav-container nav, 
@@ -61,6 +88,39 @@ body {
   background: #505050;
 }
 
-.nextra-navbar-blur, .nextra-search-results {
-  background-color: var(--x-color-nextra-bg) !important; /* Light background */
+.nextra-navbar-blur {
+  background-color: transparent !important;
+  backdrop-filter: blur(6px);
+}
+
+/* Light mode */
+.nextra-navbar-blur {
+  background: transparent !important;
+}
+
+/* Dark mode */
+:root[style*="color-scheme: dark"] .nextra-navbar-blur {
+  background: transparent !important;
+}
+
+
+.nextra-search-results {
+  background: rgba(248, 250, 255, 1) !important;
+}
+
+/* Dark mode */
+:root[style*="color-scheme: dark"] .nextra-search-results {
+  background: rgba(10, 25, 47, 1) !important;
+}
+
+body {
+  background: linear-gradient(to bottom right, #F8FAFF, #EEF2FF, #E0E7FF);
+}
+
+:root[style*="color-scheme: dark"] body {
+  background: linear-gradient(to bottom right, #000000, #0A192F, #112240);
+}
+
+.subheading-anchor {
+  display: none;
 }
