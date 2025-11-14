@@ -1,4 +1,5 @@
 :root {
+  --font-space-grotesk: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
   --nextra-primary-hue: 196;
   --nextra-primary-saturation: 100%;
   --nextra-primary-brightness: 50%;
