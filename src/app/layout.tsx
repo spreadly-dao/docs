@@ -16,7 +16,7 @@ const navbar = (
     logo={(
       <>
         <Image
-          src="/spreadly.svg"
+          src="/spreadly.png"
           alt="Logo"
           height={20}
           width={20}
