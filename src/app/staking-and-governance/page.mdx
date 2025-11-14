@@ -1,0 +1,73 @@
+---
+title: Staking & Governance
+description: Learn about Spreadly's Staking & Governance
+index: 5
+---
+
+# Staking & Governance
+
+Spreadly's governance architecture operates across two complementary layers: the Spreadly DAO and Investment DAOs. 
+The Spreadly DAO oversees platform-wide operations and protocol parameters, with staked token holders earning 
+protocol revenues while guiding the platform's development, while Investment DAOs focus on specific trading strategies 
+and treasury management, with their token stakers earning returns from investment activities. Both governance layers 
+feature non-locking staking mechanisms, allowing stakers to adjust their positions freely by staking or unstaking at any time.
+
+To participate in governance and revenue sharing, tokens must be staked before specific timeframes - the end of 
+the profit distribution epoch for revenue sharing, and before a proposal's voting period concludes for governance 
+participation. Token stakers can also delegate their voting power to multiple addresses on Sui, providing flexible 
+participation options while managing their involvement across the ecosystem.
+
+## Spreadly DAO
+
+SpreadlyDAO functions as the platform's administrative layer, with staked SPRD holders participating 
+in protocol governance and earning revenue from platform activities. Unlike Investment DAOs, 
+SpreadlyDAO does not engage in direct trading but instead manages protocol parameters and earns fees from platform usage.
+
+**Protocol Governance -** Staked SPRD holders can participate in governance decisions regarding the following:
+  - Setting minimum SPRD thresholds for launching new bonding curves
+  - Approving whitelisted assets for the investor window phase of capital formation
+  - Determining required SPRD fees for position opening/closing and commenting on proposals
+  - Configuring treasury/revenue distribution ratio for total revenues
+  - Updating profit distribution schedules and epoch lengths
+  - Curating whitelisted assets for DeepBook and Cetus trading
+  - Setting management fee rates charged to DAOs on profitable trades
+  - Configuring governance parameters including proposal support thresholds, minimum participation requirements, 
+  minimum proposal durations, and minimum SPRD stake for proposal creation
+  - Overseeing treasury funds for decentralized operation of Spreadly
+
+
+**Economic Benefits -** Staked SPRD holders earn protocol revenue through two distinct channels:
+    * **SPRD Protocol Fees:** SPRD generated from DAO activities across the platform, including DAO launch fees, proposal commenting 
+    fees, and trade opening/closing fees.
+    - **DAO Trading Fees:** Management fees from profitable trades executed by DAOs, denominated in the traded currency.
+
+Both revenue streams are distributed between treasury and revenue pools according to the DAO config. 
+Staked SPRD holders receive their share of the revenue pools through regular epoch-based distributions, 
+proportional to their staked amount.
+
+## Investment DAOs
+
+Investment DAOs represent individual trading entities on the platform, each with its own governance structure
+and profit distribution mechanism.
+
+**Governance Rights -** Token stakers in Investment DAOs can participate in:
+  - Treasury disbandment voting with 30-day cooldown period, requiring a majority vote of all token holders. 
+  - Revenue allocation decisions between distribution and reinvestment into the treasury
+  - Updating profit distribution schedules and epoch lengths
+  - Altering the trader fee that the executing admin receives on profitable trades (only for admin DAOs)
+  - Configuring governance parameters including proposal support thresholds, minimum participation requirements, 
+  minimum proposal durations, and minimum SPRD stake for proposal creation
+
+**Economic Benefits -** Investment DAO token stakers can earn returns through:
+  - Equitable profit distribution from successful trades
+  - Proportional treasury share upon DAO disbandment
+
+  **Governance-Based Trading** 
+  
+  Governance-Based DAOs require proposals for all trading activities and treasury management. DAO token stakers can vote on proposals that:
+
+  - Spot trade any token pairs on DeepBook and Cetus DEX, accessing all tokens on Sui
+  - Generate leveraged returns through perpetual futures positions on Sudo Finance
+  - Optimize treasury yields by participating in Suilend's lending and borrowing markets
+  - Transfer treasury assets to external wallets for specific use cases
+  - Build NFT positions by acquiring digital collectibles through TradePort's marketplace

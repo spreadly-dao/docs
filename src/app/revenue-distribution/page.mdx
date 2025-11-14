@@ -1,0 +1,49 @@
+---
+title: Revenue Distribution
+description: Learn about Spreadly's Revenue Distribution
+index: 6
+---
+
+
+# Revenue Distribution
+
+Spreadly implements a dual-stream revenue model that distributes both protocol-level fees and DAO-specific management fees to SPRD token staker. 
+The system ensures fair distribution of platform revenues while incentivizing long-term participation in both the Spreadly protocol and individual DAOs.
+
+## Spreadly DAO Streams
+
+The Spreadly protocol generates revenue through two complementary fee sources, which are distributed to protocol stakeholders through a systematic process.
+
+**SPRD Protocol Fees**
+- DAO launch fees for creating new investment DAOs
+- Proposal commenting fees
+- Trade execution fees
+   
+**DAO Trading Fees**
+- Management fees collected from profitable trades
+- Denominated in the traded currency
+
+**Distribution Process**
+
+![Revenue Distribution Diagram](/spreadly_revenue_distribution.webp)
+
+The revenue distribution process begins with a fundamental split of total revenue 
+between treasury and distribution pools, with the ratio determined by governance decisions. 
+From the distribution pool, rewards are allocated to SPRD stakers on a pro-rata basis according 
+to their individual staked amounts. These distributions occur in 30-day epochs, though this 
+duration can be modified through governance proposals. To participate in a given epoch's 
+distribution, users must have their tokens staked before the epoch concludes to be considered 
+eligible for rewards.
+
+## Investment DAO Streams
+
+Investment DAOs implement performance-based reward systems only for profitable trades and investments.
+
+**Distribution Process**
+
+![Revenue Distribution Diagram](/investor_daos_distribution.webp)
+
+The revenue management process allows for a flexible allocation between distribution and treasury reinvestment, with the specific ratio 
+determined through governance decisions. When distributed, rewards are allocated pro-rata to participants based on their 
+individual staked token amounts. The distribution follows an epoch-based schedule that can be adjusted through governance 
+mechanisms as needed. Once calculated, eligible stakers can claim their portion of the distributed rewards.
