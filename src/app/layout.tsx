@@ -35,7 +35,7 @@ const navbar = (
           fontSize: '1.5rem',
           fontWeight: 800,
           letterSpacing: '-0.02em',
-          background: 'linear-gradient(45deg, #3b82f6, #1e40af)',
+          background: 'linear-gradient(45deg, var(--primary-light), var(--primary-dark))',
           WebkitBackgroundClip: 'text',
           WebkitTextFillColor: 'transparent'
         }}>Spreadly</span>

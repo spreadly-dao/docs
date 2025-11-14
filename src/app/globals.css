@@ -1,5 +1,7 @@
 :root {
   --font-space-grotesk: 'Space Grotesk', -apple-system, BlinkMacSystemFont, sans-serif;
+  --primary-light: #38BDF8;
+  --primary-dark: #0284C7;
   --nextra-primary-hue: 196;
   --nextra-primary-saturation: 100%;
   --nextra-primary-brightness: 50%;
@@ -17,6 +19,8 @@
 }
 
 :root[style*="color-scheme: dark"] {
+  --primary-light: #38BDF8;
+  --primary-dark: #0284C7;
   --x-color-primary-600: #00BBFF; /* Dark mode value */
   --x-color-gray-100: #FFFFFF;
   --x-color-gray-200: #FFFFFF;
